@@ -30,7 +30,7 @@ jobs:
       PGPASSWORD: postgres
       PGDATABASE: spa
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Emular roles de Supabase (anon, authenticated, service_role) y esquema auth
         run: psql -v ON_ERROR_STOP=1 -f scripts/ci/supabase_shim.sql
       - name: Aplicar migraciones en orden
