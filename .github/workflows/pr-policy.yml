@@ -19,6 +19,7 @@ jobs:
           BODY: ${{ github.event.pull_request.body }}
         run: |
           set -euo pipefail
+          if [[ "$HEAD" == dependabot/* ]]; then echo "PR de Dependabot: se omite la política de nombres ✔"; exit 0; fi
           echo "PR: $HEAD → $BASE"
           case "$BASE" in
             main)
