@@ -46,7 +46,7 @@ jobs:
           ref: ${{ inputs.qa-ref }}
           token: ${{ secrets.QA_READ_TOKEN }}
           path: qa
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ inputs.python-version }}
 
